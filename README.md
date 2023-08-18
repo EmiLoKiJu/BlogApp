@@ -45,7 +45,7 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-BlogApp
+BlogApp is just a database for now
 
 ### Prerequisites
 
