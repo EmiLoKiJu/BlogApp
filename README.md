@@ -21,7 +21,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [BlogApp] <a name="about-project"></a>
+# 📖 [Catalog of my things] <a name="about-project"></a>
 
 <div align="center">
 
@@ -30,7 +30,7 @@
 
 </div>
 
-**[BlogApp]** This is a Ruby on Rails project.
+**[Catalog of my things]** This is a Ruby on Rails project.
 
 ## 🛠 Built With <a name="built-with"></a>
 
