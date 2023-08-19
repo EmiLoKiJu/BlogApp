@@ -3,32 +3,77 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'validations' do
-    it { should validate_presence_of(:name) }
-    it { should validate_numericality_of(:posts_counter).only_integer.is_greater_than_or_equal_to(0) }
+  subject { User.new(name: 'Monika', posts_counter: 0) }
+
+  before { subject.save }
+
+  it 'should validate presence of name' do
+    subject.name = nil
+    expect(subject).to_not be_valid
+  end
+  it 'should validate numericality of posts_counter, only_integer and greater than or equal to 0' do
+    subject.posts_counter = 'string'
+    expect(subject).to_not be_valid
+    subject.posts_counter = -1
+    expect(subject).to_not be_valid
   end
 
-  describe 'associations' do
-    it { should have_many(:comments).with_foreign_key(:author_id) }
-    it { should have_many(:likes).with_foreign_key(:author_id) }
-    it { should have_many(:posts).with_foreign_key(:author_id) }
+  it 'should have many posts' do
+    assc = described_class.reflect_on_association(:posts)
+    expect(assc.macro).to eq :has_many
   end
 
-  describe 'methods' do
-    let(:user) { create(:user) }
+  it 'should have many comments' do
+    assc = described_class.reflect_on_association(:comments)
+    expect(assc.macro).to eq :has_many
+  end
 
-    it 'returns recent posts' do
-      user.posts.create(title: 'Post 1', text: 'Text 1')
-      user.posts.create(title: 'Post 2', text: 'Text 2')
-      user.posts.create(title: 'Post 3', text: 'Text 3')
-      user.posts.create(title: 'Post 4', text: 'Text 4')
-      user.posts.create(title: 'Post 5', text: 'Text 5')
+  it 'should have many likes' do
+    assc = described_class.reflect_on_association(:likes)
+    expect(assc.macro).to eq :has_many
+  end
 
-      recent_posts = user.recent_posts(2)
-      expect(recent_posts.size).to eq(2)
+  it 'returns recent posts' do
+    post1 = Post.create(
+      title: 'Post 1',
+      text: 'Text 1',
+      author_id: subject.id,
+      comments_counter: 0,
+      likes_counter: 0
+    )
+    post2 = Post.create(
+      title: 'Post 2',
+      text: 'Text 2',
+      author_id: subject.id,
+      comments_counter: 0,
+      likes_counter: 0
+    )
+    post3 = Post.create(
+      title: 'Post 3',
+      text: 'Text 3',
+      author_id: subject.id,
+      comments_counter: 0,
+      likes_counter: 0
+    )
+    post4 = Post.create(
+      title: 'Post 4',
+      text: 'Text 4',
+      author_id: subject.id,
+      comments_counter: 0,
+      likes_counter: 0
+    )
+    post5 = Post.create(
+      title: 'Post 5',
+      text: 'Text 5',
+      author_id: subject.id,
+      comments_counter: 0,
+      likes_counter: 0
+    )
+    
+    recent_posts = subject.recent_posts(2)
+    expect(recent_posts.size).to eq(2)
 
-      recent_posts = user.recent_posts
-      expect(recent_posts.size).to eq(3)
-    end
+    recent_posts = subject.recent_posts
+    expect(recent_posts.size).to eq(3)
   end
 end

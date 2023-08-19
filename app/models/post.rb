@@ -9,8 +9,8 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  after_create :update_post_counter
-  after_destroy :update_post_counter
+  after_create :update_user_posts_counter
+  after_destroy :update_user_posts_counter
 
   def update_user_posts_counter
     author.update(posts_counter: author.posts.count)
