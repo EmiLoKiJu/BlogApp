@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# Remplazed frozen_string_literal true for something else
 
 class CreateUsers < ActiveRecord::Migration[7.0]
   def change

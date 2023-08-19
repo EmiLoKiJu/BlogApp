@@ -1,3 +1,5 @@
+# Remplazed frozen_string_literal true for something else
+
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase

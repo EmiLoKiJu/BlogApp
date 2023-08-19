@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# Remplazed frozen_string_literal true for something else
 
 # Load the Rails application.
 require_relative 'application'

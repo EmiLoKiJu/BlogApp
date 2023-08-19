@@ -1,3 +1,5 @@
+# Remplazed frozen_string_literal true for something else
+
 # This file is used by Rack-based servers to start the application.
 
 require_relative 'config/environment'
