@@ -53,11 +53,11 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'bullet'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'bullet'
   gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 end
 
 group :development do

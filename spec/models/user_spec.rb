@@ -33,47 +33,49 @@ RSpec.describe User, type: :model do
     expect(assc.macro).to eq :has_many
   end
 
+  # rubocop:disable Metrics/BlockLength
   it 'returns recent posts' do
-    post1 = Post.create(
+    Post.create(
       title: 'Post 1',
       text: 'Text 1',
       author_id: subject.id,
       comments_counter: 0,
       likes_counter: 0
     )
-    post2 = Post.create(
+    Post.create(
       title: 'Post 2',
       text: 'Text 2',
       author_id: subject.id,
       comments_counter: 0,
       likes_counter: 0
     )
-    post3 = Post.create(
+    Post.create(
       title: 'Post 3',
       text: 'Text 3',
       author_id: subject.id,
       comments_counter: 0,
       likes_counter: 0
     )
-    post4 = Post.create(
+    Post.create(
       title: 'Post 4',
       text: 'Text 4',
       author_id: subject.id,
       comments_counter: 0,
       likes_counter: 0
     )
-    post5 = Post.create(
+    Post.create(
       title: 'Post 5',
       text: 'Text 5',
       author_id: subject.id,
       comments_counter: 0,
       likes_counter: 0
     )
-    
+
     recent_posts = subject.recent_posts(2)
     expect(recent_posts.size).to eq(2)
 
     recent_posts = subject.recent_posts
     expect(recent_posts.size).to eq(3)
   end
+  # rubocop:enable Metrics/BlockLength
 end

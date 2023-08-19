@@ -67,6 +67,7 @@ RSpec.describe Post, type: :model do
     expect(user1.posts_counter).to eq(1)
   end
 
+  # rubocop:disable Metrics/BlockLength
   it 'returns recent comments' do
     @post1 = Post.create(
       title: 'Raondom title 2',
@@ -76,42 +77,36 @@ RSpec.describe Post, type: :model do
       likes_counter: 0
     )
     @post1.save
-    @comment1 = Comment.create(
+    Comment.create(
       text: 'Text 1',
       author_id: @user1.id,
       post_id: @post1.id
     )
-    @comment2 = Comment.create(
+    Comment.create(
       text: 'Text 2',
       author_id: @user1.id,
       post_id: @post1.id
     )
-    @comment3 = Comment.create(
+    Comment.create(
       text: 'Text 3',
       author_id: @user1.id,
       post_id: @post1.id
     )
-    @comment4 = Comment.create(
+    Comment.create(
       text: 'Text 4',
       author_id: @user1.id,
       post_id: @post1.id
     )
-    @comment5 = Comment.create(
+    Comment.create(
       text: 'Text 5',
       author_id: @user1.id,
       post_id: @post1.id
     )
-    @comment6 = Comment.create(
+    Comment.create(
       text: 'Text 6',
       author_id: @user1.id,
       post_id: @post1.id
     )
-    @comment1.save
-    @comment2.save
-    @comment3.save
-    @comment4.save
-    @comment5.save
-    @comment6.save
 
     recent_comments = @post1.recent_comments(2)
     expect(recent_comments.size).to eq(2)
@@ -119,5 +114,5 @@ RSpec.describe Post, type: :model do
     recent_comments = @post1.recent_comments
     expect(recent_comments.size).to eq(5)
   end
-
+  # rubocop:enable Metrics/BlockLength
 end
