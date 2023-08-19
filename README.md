@@ -56,12 +56,16 @@ Rails 7.07 or above
 
 ### Setup
 
-Clone this repository to your desired folder:
+Clone this repository to your desired folder: 
+
+git clone https://github.com/EmiLoKiJu/BlogApp.git
 
 
 ### Install
 
-You don't need to install this project.
+go to the folder of the repository, and run this line in the terminal to install dependences:
+
+bundle install
 
 ### Usage
 
@@ -69,7 +73,9 @@ run rails server
 
 ### Run tests
 
-No testing implemented yet
+you can run tests by running this line in the terminal:
+
+rspec
 
 ### Deployment
 
