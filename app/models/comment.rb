@@ -1,4 +1,4 @@
-
+# Remplazed frozen_string_literal true for something else
 
 class Comment < ApplicationRecord
   belongs_to :author, class_name: 'User'

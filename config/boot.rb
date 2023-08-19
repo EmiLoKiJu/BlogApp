@@ -1,4 +1,4 @@
-
+# Remplazed frozen_string_literal true for something else
 
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 

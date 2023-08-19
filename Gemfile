@@ -1,4 +1,4 @@
-
+# Remplazed frozen_string_literal true for something else
 
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }

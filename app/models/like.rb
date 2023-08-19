@@ -1,4 +1,4 @@
-
+# Remplazed frozen_string_literal true for something else
 
 class Like < ApplicationRecord
   belongs_to :author, class_name: 'User'

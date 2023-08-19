@@ -1,4 +1,4 @@
-
+# Remplazed frozen_string_literal true for something else
 
 require 'rails_helper'
 

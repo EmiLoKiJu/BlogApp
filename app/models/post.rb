@@ -1,4 +1,4 @@
-
+# Remplazed frozen_string_literal true for something else
 
 class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 250 }
