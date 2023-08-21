@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User's Post</title>
+</head>
+<body>
+  <h1>User's Post</h1>
+  <h2>Author: <%= @user.name %></h2>
+  <h3>Title: <%= @post.title %></h3>
+  <p><%= @post.text %></p>
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li class='dflex comment'><%= User.find(comment.author_id).name %><br/><%= comment.text %></li><br/>
+    <% end %>
+  </ul>
+</body>
+</html>

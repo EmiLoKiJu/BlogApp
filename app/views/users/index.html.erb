@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List of Users</title>
+</head>
+<body>
+  <ul>
+    <% @users.each do |user| %>
+      <li class='dflex user'><img src="<%= user.photo %>"><%= user.name %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
