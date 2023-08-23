@@ -70,6 +70,8 @@ bundle install
 ### Usage
 
 run rails server
+Go to the localhost and see it working.
+add /users to see all the users. From then feel free to navigate
 
 ### Run tests
 

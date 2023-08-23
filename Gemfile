@@ -8,6 +8,8 @@ ruby '3.2.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.7'
 
+gem 'rails-controller-testing'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -47,7 +49,6 @@ gem 'pg', '~> 1.1'
 group :development do
   gem 'bullet'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   # Use console on exceptions pages [https://github.com/rails/web-console]
