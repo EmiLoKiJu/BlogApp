@@ -132,8 +132,7 @@ a .small-img:active {
   transition: all 0.3s;
 }
 
-.see-all-button button:active,
-.prev-next a button:active {
+.see-all-button button:active {
   transform: scale(0.9);
 }
 
@@ -145,6 +144,10 @@ a .small-img:active {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
   transform: scale(1.1);
   cursor: pointer;
+}
+
+.prev-next a button:active {
+  transform: scale(0.9);
 }
 
 .bio-post-box2 {
