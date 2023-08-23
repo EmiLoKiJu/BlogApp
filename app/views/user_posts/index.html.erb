@@ -4,11 +4,52 @@
   <title>User's Posts</title>
 </head>
 <body>
-  <h1>User's Posts</h1>
-  <ul>
-    <% @posts.each do |post| %>
-      <li><%= post.title %></li>
-    <% end %>
-  </ul>
+  <% if @posts.empty? %>
+    <div class='bio-post-box'>No posts yet</div>
+  <% else %>
+    <ul>
+      <% @posts.each do |epost| %>
+        <%= link_to user_post_path(@user, epost) do %>
+          <li class='dflex flexcol bio-post-box'>
+            <div class='bio2'>
+              <%= epost.title %>
+            </div>
+            <br/>
+            <div>
+              <%= truncate(epost.text, length: 165) %>
+            </div>
+            <div class='posts-counter'>
+              Comments: <%= epost.comments_counter %> Likes: <%= epost.likes_counter %>
+            </div>
+          </li>
+          <ul class='bio-post-box2'>
+            <% if epost.comments.empty? %>
+              <li>
+                0 Comments
+              </li>
+            <% else %>
+              <% epost.comments.each do |ecomment| %>
+                <li>
+                  <%= ecomment.author.name %>:  <%= truncate(ecomment.text, length: 165) %> <br/>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        <% end %>
+      <% end %>
+    </ul>
+    <div class="prev-next">
+      <% if @page > 1 %>
+        <%= link_to user_posts_path(@user, page: @page - 1) do %>
+          <button>Previous Page</button>
+        <% end %>
+      <% end %>
+      <% if @page < @total_pages %>
+        <%= link_to user_posts_path(@user, page: @page + 1) do %>
+          <button>Next Page</button>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </body>
 </html>

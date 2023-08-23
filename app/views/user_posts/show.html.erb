@@ -4,14 +4,30 @@
   <title>User's Post</title>
 </head>
 <body>
-  <h1>User's Post</h1>
-  <h2>Author: <%= @user.name %></h2>
-  <h3>Title: <%= @post.title %></h3>
-  <p><%= @post.text %></p>
-  <ul>
-    <% @post.comments.each do |comment| %>
-      <li class='dflex comment'><%= User.find(comment.author_id).name %><br/><%= comment.text %></li><br/>
+  <div class='bio-post-box'>
+    <div class='bio'>
+      <%= @post.title %>
+    </div>
+    <br/>
+    <div>
+      <%= @post.text %>
+    </div>
+    <div class='posts-counter'>
+      Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %>
+    </div>
+  </div>
+  <ul class='bio-post-box2'>
+    <% if @post.comments.empty? %>
+      <li>
+        0 Comments
+      </li>
+    <% else %>
+      <% @post.comments.each do |ecomment| %>
+        <li>
+          <%= ecomment.author.name %>:  <%= ecomment.text %> <br/>
+        </li>
+      <% end %>
     <% end %>
   </ul>
-</body>
+  </body>
 </html>

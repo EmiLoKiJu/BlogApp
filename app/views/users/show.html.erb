@@ -4,7 +4,48 @@
   <title>User Profile</title>
 </head>
 <body>
-  <h1>User Profile</h1>
-  <p>Name: <%= @user.name %></p>
+  <div class='dflex user'>
+    <div class='dflex small-img'>
+      <img src="<%= @user.photo %>">
+    </div>
+    <div class='dflex flexcol user-name-nposts'>
+      <div class='username'><%= @user.name %></div>
+      <div class='posts-counter'>
+        posts counter: <%= @user.posts_counter %>
+      </div>
+    </div>
+  </div>
+  <div class='bio-post-box'>
+    <div class='bio'>Bio</div>
+    <br/>
+    <div><%= @user.bio %></div>
+  </div>
+  <ul>
+    <% if @user.recent_posts.empty? %>
+      <li class='bio-post-box'>No posts yet</li>
+    <% else %>
+      <% @user.recent_posts.each do |epost| %>
+        <%= link_to user_post_path(@user, epost) do %>
+          <li class='bio-post-box'>
+            <div class='bio2'>
+              <%= epost.title %>
+            </div>
+            <br/>
+            <div>
+              <%= truncate(epost.text, length: 165) %>
+            </div>
+            <div class='posts-counter'>
+              Comments: <%= epost.comments_counter %> Likes: <%= epost.likes_counter %>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+  <% if @user.recent_posts.present? %>
+    <%= link_to user_posts_path(@user), class: 'dflex see-all-button' do %>
+      <button>See all posts</button>
+    <% end %>
+  <% end %>
 </body>
 </html>
