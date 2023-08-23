@@ -49,7 +49,6 @@ gem 'pg', '~> 1.1'
 group :development do
   gem 'bullet'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   # Use console on exceptions pages [https://github.com/rails/web-console]
