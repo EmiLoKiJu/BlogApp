@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User's Post</title>
+</head>
+<body>
+  <div class='bio-post-box'>
+    <div class='bio'>
+      <%= @post.title %>
+    </div>
+    <br/>
+    <div>
+      <%= @post.text %>
+    </div>
+    <div class='posts-counter'>
+      Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %>
+    </div>
+  </div>
+  <ul class='bio-post-box2'>
+    <% if @post.comments.empty? %>
+      <li>
+        0 Comments
+      </li>
+    <% else %>
+      <% @post.comments.each do |ecomment| %>
+        <li>
+          <%= ecomment.author.name %>:  <%= ecomment.text %> <br/>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  </body>
+</html>

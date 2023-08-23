@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List of Users</title>
+</head>
+<body>
+  <ul>
+    <% @users.each do |user| %>
+      <li class='dflex user'>
+        <div class='dflex small-img'>
+          <img src="<%= user.photo %>">
+        </div>
+        <div class='dflex flexcol user-name-nposts'>
+          <a href="<%= user_path(user) %>">
+            <div class='username'><%= user.name %></div>
+          </a>
+          <div class='posts-counter'>posts counter: <%= user.posts_counter %></div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>
