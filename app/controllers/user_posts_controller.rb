@@ -14,7 +14,6 @@ class UserPostsController < ApplicationController
     @post = @user.posts.find(params[:id])
   end
 
-
   def new
     @user = current_user
     @post = current_user.posts.new

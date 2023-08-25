@@ -129,6 +129,11 @@ a .small-img:active {
   margin-top: auto;
 }
 
+.like-button {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
 .see-all-button button,
 .prev-next a button,
 .like-button {
@@ -139,12 +144,13 @@ a .small-img:active {
   transition: all 0.3s;
 }
 
-.see-all-button button:active {
+.see-all-button button:active,
+.like-button:active {
   transform: scale(0.9);
 }
 
 .see-all-button button:hover,
-.prev-next a button:hover
+.prev-next a button:hover,
 .like-button:hover {
   background-color: grey;
   color: white;
@@ -154,14 +160,8 @@ a .small-img:active {
   cursor: pointer;
 }
 
-.prev-next a button:active,
-.like-button:active {
+.prev-next a button:active {
   transform: scale(0.9);
-}
-
-.like-button{
-  margin: 15px 0;
-  cursor: pointer;
 }
 
 .bio-post-box2 {
@@ -208,7 +208,7 @@ a .small-img:active {
   padding: 2px 3%;
 }
 
-.form-like-button{
+.form-like-button {
   text-align: center;
   margin: 0 3%;
   padding: 2px 3%;
