@@ -4,6 +4,17 @@
   <title>User's Posts</title>
 </head>
 <body>
+  <div class='dflex user'>
+    <div class='dflex small-img'>
+      <img src="<%= @user.photo %>">
+    </div>
+    <div class='dflex flexcol user-name-nposts'>
+      <div class='username'><%= @user.name %></div>
+      <div class='posts-counter'>
+        posts counter: <%= @user.posts_counter %>
+      </div>
+    </div>
+  </div>
   <% if @posts.empty? %>
     <div class='bio-post-box'>No posts yet</div>
   <% else %>
@@ -23,12 +34,12 @@
             </div>
           </li>
           <ul class='bio-post-box2'>
-            <% if epost.comments.empty? %>
+            <% if epost.recent_comments.empty? %>
               <li>
                 0 Comments
               </li>
             <% else %>
-              <% epost.comments.each do |ecomment| %>
+              <% epost.recent_comments.each do |ecomment| %>
                 <li>
                   <%= ecomment.author.name %>:  <%= truncate(ecomment.text, length: 165) %> <br/>
                 </li>
