@@ -16,6 +16,9 @@
       Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %>
     </div>
   </div>
+  <div class='form-like-button dflex flexcol'>
+    <%= button_to 'Like', user_post_likes_path(@user, @post), class: 'like-button' %>
+  </div>
   <ul class='bio-post-box2'>
     <% if @post.comments.empty? %>
       <li>

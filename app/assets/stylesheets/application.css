@@ -19,6 +19,12 @@ a:active {
   text-decoration: none;
 }
 
+/* form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
 .dflex {
   display: flex;
 }
@@ -124,7 +130,8 @@ a .small-img:active {
 }
 
 .see-all-button button,
-.prev-next a button {
+.prev-next a button,
+.like-button {
   height: 30px;
   width: 20%;
   border: 2px solid grey;
@@ -137,7 +144,8 @@ a .small-img:active {
 }
 
 .see-all-button button:hover,
-.prev-next a button:hover {
+.prev-next a button:hover
+.like-button:hover {
   background-color: grey;
   color: white;
   border: 2px solid black;
@@ -146,12 +154,62 @@ a .small-img:active {
   cursor: pointer;
 }
 
-.prev-next a button:active {
+.prev-next a button:active,
+.like-button:active {
   transform: scale(0.9);
+}
+
+.like-button{
+  margin: 15px 0;
+  cursor: pointer;
 }
 
 .bio-post-box2 {
   border: 2px solid black;
   margin: 2px 3%;
+  padding: 2px 3%;
+}
+
+.form-title {
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin: 15px 3% 0 3%;
+  padding: 25px 3%;
+}
+
+.form-text {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin: 0 3%;
+  padding: 2px 3%;
+}
+
+.form-text2 {
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin: 0 3%;
+  padding: 25px 3%;
+}
+
+.form-title input,
+.form-text textarea,
+.form-text2 textarea {
+  width: 100%;
+}
+
+.form-button {
+  text-align: center;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 0 3%;
+  padding: 2px 3%;
+}
+
+.form-like-button{
+  text-align: center;
+  margin: 0 3%;
   padding: 2px 3%;
 }

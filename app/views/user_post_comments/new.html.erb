@@ -1,10 +1,33 @@
-<%= form_with model: [@user, @post, @comment], url: user_post_comments_path(@user, @post) do |f| %>
-  <div>
-    <%= f.label :text %>
-    <%= f.text_area :text %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User's Post</title>
+</head>
+<body>
+  <div class='bio-post-box'>
+    <div class='bio'>
+      <%= @post.title %>
+    </div>
+    <br/>
+    <div>
+      <%= @post.text %>
+    </div>
+    <div class='posts-counter'>
+      Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter %>
+    </div>
   </div>
-  <div>
-    <%= f.submit 'Comment Post' %>
+  <div class='form-like-button dflex flexcol'>
+    <%= button_to 'Like', user_post_likes_path(@user, @post), class: 'like-button' %>
   </div>
-<% end %>
+  <%= form_with model: [@user, @post, @comment], url: user_post_comments_path(@user, @post) do |f| %>
+    <div class='form-text2'>
+      <%= f.text_area :text, placeholder: 'Comment text' %>
+    </div>
+    <div class='form-button'>
+      <%= f.submit 'Comment Post', class: 'like-button' %>
+    </div>
+  <% end %>
+  </body>
+</html>
+
   
