@@ -21,14 +21,11 @@ class UserPostsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @post = current_user.posts.build(post_params.merge(comments_counter: 0, likes_counter: 0))
     if @post.save
-      puts @post.errors.full_messages
-      redirect_to user_post_path(@user, @post), notice: 'Post created successfully.'
+      redirect_to user_post_path(current_user, @post), notice: 'Post created successfully.'
     else
-      puts @post.errors.full_messages
-      redirect_to new_user_post_path(@user), alert: 'There was an error creating the post.'
+      redirect_to new_user_post_path(current_user), alert: 'There was an error creating the post.'
     end
   end
 

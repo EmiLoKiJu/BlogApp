@@ -29,5 +29,8 @@
       <% end %>
     <% end %>
   </ul>
+  <%= link_to new_user_post_comment_path(@user, @post), class: 'dflex see-all-button' do %>
+    <button>Comment post</button>
+  <% end %>
   </body>
 </html>
