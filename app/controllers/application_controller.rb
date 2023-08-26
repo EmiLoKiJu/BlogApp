@@ -1,4 +1,6 @@
-# Remplazed frozen_string_literal true for something else
-
 class ApplicationController < ActionController::Base
+  def current_user
+    User.first
+  end
+  helper_method :current_user
 end

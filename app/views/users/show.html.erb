@@ -20,6 +20,11 @@
     <br/>
     <div><%= @user.bio %></div>
   </div>
+  <% if @user.id == 1 %>
+    <%= link_to new_user_post_path(@user), class: 'dflex see-all-button' do %>
+      <button>Create post</button>
+    <% end %>
+  <% end %>
   <ul>
     <% if @user.recent_posts.empty? %>
       <li class='bio-post-box'>No posts yet</li>

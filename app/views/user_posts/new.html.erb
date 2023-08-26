@@ -1,0 +1,27 @@
+<div class='dflex user'>
+  <div class='dflex small-img'>
+    <img src="<%= @user.photo %>">
+  </div>
+  <div class='dflex flexcol user-name-nposts'>
+    <div class='username'><%= @user.name %></div>
+    <div class='posts-counter'>
+      posts counter: <%= @user.posts_counter %>
+    </div>
+  </div>
+</div>
+<div class='bio-post-box'>
+  <div class='bio'>Bio</div>
+  <br/>
+  <div><%= @user.bio %></div>
+</div>
+<%= form_with model: [@user, @post], url: user_posts_path(@user) do |f| %>
+  <div class='form-title'>
+    <%= f.text_field :title, placeholder: 'Title' %>
+  </div>
+  <div class='form-text'>
+    <%= f.text_area :text, placeholder: 'Text' %>
+  </div>
+  <div class='form-button'>
+    <%= f.submit 'Create Post', class: 'like-button' %>
+  </div>
+<% end %>

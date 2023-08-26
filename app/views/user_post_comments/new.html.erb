@@ -19,21 +19,15 @@
   <div class='form-like-button dflex flexcol'>
     <%= button_to 'Like', user_post_likes_path(@user, @post), class: 'like-button' %>
   </div>
-  <ul class='bio-post-box2'>
-    <% if @post.comments.empty? %>
-      <li>
-        0 Comments
-      </li>
-    <% else %>
-      <% @post.comments.each do |ecomment| %>
-        <li>
-          <%= ecomment.author.name %>:  <%= ecomment.text %> <br/>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-  <%= link_to new_user_post_comment_path(@user, @post), class: 'dflex see-all-button' do %>
-    <button>Comment post</button>
+  <%= form_with model: [@user, @post, @comment], url: user_post_comments_path(@user, @post) do |f| %>
+    <div class='form-text2'>
+      <%= f.text_area :text, placeholder: 'Comment text' %>
+    </div>
+    <div class='form-button'>
+      <%= f.submit 'Comment Post', class: 'like-button' %>
+    </div>
   <% end %>
   </body>
 </html>
+
+  
