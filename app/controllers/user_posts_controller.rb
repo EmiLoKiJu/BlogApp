@@ -5,7 +5,7 @@ class UserPostsController < ApplicationController
     @total_pages = (@user.posts.count.to_f / @posts_per_page).ceil
     @page = (params[:page] || 1).to_i
     offset = (@page - 1) * @posts_per_page
-    @posts = @user.limit(@posts_per_page).offset(offset)
+    @posts = @user.posts.limit(@posts_per_page).offset(offset)
   end
 
   def show

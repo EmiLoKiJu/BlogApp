@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 'username1'
+  photo: 'https://res.cloudinary.com/practicaldev/image/fetch/s--8rxhq79s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/z2bgvvg2oh9536j7q2tb.png'
+  bio: 'bio1'
+  updated_at: 2023-08-17 10:58:20
+  created_at: 2023-08-17 10:58:20
+  posts_counter: 4
+
+two:
+  name: 'username2'
+  photo: 'https://res.cloudinary.com/practicaldev/image/fetch/s--8rxhq79s--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/z2bgvvg2oh9536j7q2tb.png'
+  bio: 'bio2'
+  updated_at: 2023-08-17 10:58:20
+  created_at: 2023-08-17 10:58:20
+  posts_counter: 1
