@@ -1,7 +1,6 @@
 require 'application_system_test_case'
 
 class UsersTest < ApplicationSystemTestCase
-
   #########################
   # Tests for user index
   #########################
@@ -58,7 +57,7 @@ class UsersTest < ApplicationSystemTestCase
   test 'displays the user\'s bio' do
     visit user_path(users(:one))
 
-    assert_text "bio"
+    assert_text 'bio'
     assert_text users(:one).bio
   end
 
