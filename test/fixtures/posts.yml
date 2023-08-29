@@ -2,18 +2,45 @@
 
 one:
   author: one
-  title: MyString
-  text: MyText
+  title: 'title1'
+  text: 'text1'
   updated_at: 2023-08-17 11:00:06
   created_at: 2023-08-17 11:00:06
-  comments_counter: 1
-  likes_counter: 1
+  comments_counter: 6
+  likes_counter: 2
 
 two:
   author: two
-  title: MyString
-  text: MyText
+  title: 'title2'
+  text: 'text2'
   updated_at: 2023-08-17 11:00:06
   created_at: 2023-08-17 11:00:06
-  comments_counter: 1
-  likes_counter: 1
+  comments_counter: 2
+  likes_counter: 2
+
+three:
+  author: one
+  title: 'title3'
+  text: 'text3'
+  updated_at: 2023-08-17 11:00:06
+  created_at: 2023-08-17 11:00:06
+  comments_counter: 0
+  likes_counter: 0
+
+four:
+  author: one
+  title: 'title4'
+  text: 'text4'
+  updated_at: 2023-08-17 11:00:06
+  created_at: 2023-08-17 11:00:06
+  comments_counter: 0
+  likes_counter: 0
+
+five:
+  author: one
+  title: 'title5'
+  text: 'text5'
+  updated_at: 2023-08-17 11:00:06
+  created_at: 2023-08-17 11:00:06
+  comments_counter: 0
+  likes_counter: 0

@@ -79,6 +79,13 @@ you can run tests by running this line in the terminal:
 
 rspec
 
+You can run test for the system doing rails test:system.
+
+If you haven't migrated your yml files in the fixtures folder to your database, you can run the following commands to do it:
+
+rails db:test:prepare
+rails db:fixtures:load RAILS_ENV=test
+
 ### Deployment
 
 No deployment implemented yet
