@@ -76,28 +76,43 @@ class PostsTest < ApplicationSystemTestCase
   # Tests for post show
   #########################
 
-  # I can see the post's title.
   test 'display the post title' do
     visit user_post_path(users(:one), posts(:one))
     sleep(1)
 
     assert_text posts(:one).title
   end
-  # I can see who wrote the post.
+
   test 'display who wrote the post' do
     visit user_post_path(users(:one), posts(:one))
 
     assert_text posts(:one).title
   end
 
-  # I can see how many comments it has.
+  test 'display how many comments it has' do
+    visit user_post_path(users(:one), posts(:one))
 
-  # I can see how many likes it has.
+    assert_text "Comments: #{posts(:one).comments_counter}"
+  end
 
-  # I can see the post body.
+  test 'display how many likes it has' do
+    visit user_post_path(users(:one), posts(:one))
 
-  # I can see the username of each commentor.
+    assert_text "Likes: #{posts(:one).likes_counter}"
+  end
 
-  # I can see the comment each commentor left.
+  test 'display the post body' do
+    visit user_post_path(users(:one), posts(:one))
 
+    assert_text posts(:one).text
+  end
+
+  test 'display the username and the comment of each commentor' do
+    visit user_post_path(users(:one), posts(:one))
+
+    posts(:one).comments.each do |comment|
+      assert_text comment.author.name
+      assert_text comment.text
+    end
+  end
 end
