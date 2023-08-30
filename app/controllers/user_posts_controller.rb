@@ -6,12 +6,11 @@ class UserPostsController < ApplicationController
     @page = (params[:page] || 1).to_i
     offset = (@page - 1) * @posts_per_page
     @posts = @user.posts.limit(@posts_per_page).offset(offset)
-    @users = User.all
   end
 
   def show
     @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    @post = @user.posts.includes(:comments).find(params[:id])
   end
 
   def new
