@@ -37,6 +37,10 @@ p {
   flex-direction: column;
 }
 
+.spacebetween {
+  justify-content: space-between;
+}
+
 .tcenter {
   text-align: center;
 }
@@ -231,7 +235,6 @@ a .small-img:active {
 }
 
 .userlogs {
-  justify-content: space-between;
   margin: 10px 3%;
 }
 

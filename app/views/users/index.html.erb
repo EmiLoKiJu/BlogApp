@@ -5,12 +5,12 @@
 </head>
 <body>
   <% if user_signed_in? %>
-    <div class='dflex userlogs'>
+    <div class='dflex userlogs spacebetween'>
       <div>Welcome, <%= current_user.name %>!</div>
       <%= link_to 'Logout', custom_destroy_user_session_path, class: 'log' %>
     </div>
   <% else %>
-    <div class='dflex userlogs'><%= link_to 'Login', new_user_session_path, class: 'log' %></div>
+    <div class='dflex userlogs spacebetween'><%= link_to 'Login', new_user_session_path, class: 'log' %></div>
   <% end %>
   <ul>
     <% @users.each do |user| %>
