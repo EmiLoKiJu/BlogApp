@@ -1,11 +1,13 @@
 class UserPostsController < ApplicationController
+  load_and_authorize_resource :post 
+
   def index
     @user = User.find(params[:user_id])
     @posts_per_page = 2
     @total_pages = (@user.posts.count.to_f / @posts_per_page).ceil
     @page = (params[:page] || 1).to_i
     offset = (@page - 1) * @posts_per_page
-    @posts = @user.limit(@posts_per_page).offset(offset)
+    @posts = @user.posts.limit(@posts_per_page).offset(offset)
   end
 
   def show
@@ -25,6 +27,14 @@ class UserPostsController < ApplicationController
     else
       redirect_to new_user_post_path(current_user), alert: 'There was an error creating the post.'
     end
+  end
+
+  def destroy
+    @post = current_user.posts.find(params[:id])
+    authorize! :destroy, @post
+
+    @post.destroy
+    redirect_to user_posts_path(current_user), notice: 'Post was successfully deleted.'
   end
 
   private

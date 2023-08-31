@@ -55,6 +55,11 @@
             <% end %>
           </ul>
         <% end %>
+        <div>
+          <% if can? :destroy, epost %>
+            <%= link_to 'Delete', user_post_path(epost.author, epost), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
       <% end %>
     </ul>
     <div class="prev-next">
