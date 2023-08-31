@@ -37,6 +37,10 @@ p {
   flex-direction: column;
 }
 
+.tcenter {
+  text-align: center;
+}
+
 .user {
   margin: 10px 3%;
   padding: 10px 0;

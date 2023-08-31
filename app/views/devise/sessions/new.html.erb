@@ -1,5 +1,6 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-title">
+    <h2 class='tcenter'>Log in</h2>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'email'  %>
   </div>
 
@@ -20,5 +21,3 @@
     <%= render "devise/shared/links" %>
   </div>
 <% end %>
-
-
