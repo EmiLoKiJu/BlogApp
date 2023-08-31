@@ -48,6 +48,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
+# gem 'webpacker'
+
 group :development do
   gem 'bullet'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
