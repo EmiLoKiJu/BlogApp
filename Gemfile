@@ -10,6 +10,8 @@ gem 'rails', '~> 7.0.7'
 
 gem 'rails-controller-testing'
 
+gem 'devise'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -45,6 +47,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+
+# gem 'webpacker'
 
 group :development do
   gem 'bullet'

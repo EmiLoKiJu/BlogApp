@@ -4,6 +4,14 @@
   <title>List of Users</title>
 </head>
 <body>
+  <% if user_signed_in? %>
+    <div class='dflex userlogs'>
+      <div>Welcome, <%= current_user.name %>!</div>
+      <%= link_to 'Logout', custom_destroy_user_session_path, class: 'log' %>
+    </div>
+  <% else %>
+    <div class='dflex userlogs'><%= link_to 'Login', new_user_session_path, class: 'log' %></div>
+  <% end %>
   <ul>
     <% @users.each do |user| %>
       <li class='dflex user'>

@@ -19,6 +19,10 @@ a:active {
   text-decoration: none;
 }
 
+p {
+  margin: 10px 3%;
+}
+
 /* form {
   display: flex;
   flex-direction: column;
@@ -31,6 +35,10 @@ a:active {
 
 .flexcol {
   flex-direction: column;
+}
+
+.tcenter {
+  text-align: center;
 }
 
 .user {
@@ -178,6 +186,13 @@ a .small-img:active {
   padding: 25px 3%;
 }
 
+.form-title2 {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin: 0 3% 0 3%;
+  padding: 25px 3%;
+}
+
 .form-text {
   border-left: 2px solid black;
   border-right: 2px solid black;
@@ -190,12 +205,13 @@ a .small-img:active {
   border-left: 2px solid black;
   border-right: 2px solid black;
   margin: 0 3%;
-  padding: 25px 3%;
+  padding: 0 3%;
 }
 
 .form-title input,
 .form-text textarea,
-.form-text2 textarea {
+.form-text2 textarea,
+.form-title2 input {
   width: 100%;
 }
 
@@ -212,4 +228,17 @@ a .small-img:active {
   text-align: center;
   margin: 0 3%;
   padding: 2px 3%;
+}
+
+.userlogs {
+  justify-content: space-between;
+  margin: 10px 3%;
+}
+
+.log {
+  align-self: flex-end;
+}
+
+.checkbox1 input:nth-child(2) {
+  width: 15px;
 }
