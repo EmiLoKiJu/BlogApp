@@ -21,6 +21,10 @@ gem 'puma', '~> 5.0'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+# jwt for json web token
+# gem 'jwt'
+# gem 'bcrypt', '~> 3.17'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

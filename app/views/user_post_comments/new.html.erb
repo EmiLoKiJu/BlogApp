@@ -27,6 +27,13 @@
       <%= f.submit 'Comment Post', class: 'like-button' %>
     </div>
   <% end %>
+  <% if user_signed_in? %>
+    <a class='prev-next' href="/api/users/<%= @user.id %>/posts/<%= @post.id %>/comments" target="_blank">
+      <button>
+        Add Comment (API)
+      </button>
+    </a>
+  <% end %>
   </body>
 </html>
 

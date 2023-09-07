@@ -48,5 +48,10 @@
   <%= link_to new_user_post_comment_path(@user, @post), class: 'dflex see-all-button' do %>
     <button>Comment post</button>
   <% end %>
+  <a class='prev-next' href="/api/users/<%= @user.id %>/posts/<%= @post.id %>/comments" target="_blank">
+    <button>
+      View User's Post Comments (API)
+    </button>
+  </a>
   </body>
 </html>

@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   root to: 'users#index'
 
+  namespace :api do
+    resources :users, only: [] do
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
+      end
+    end
+  end
+
   devise_for :users, controllers: { registrations: 'users/registrations' }, skip: [:sessions]
   devise_scope :user do
     get 'log_in', to: 'devise/sessions#new', as: :new_user_session
